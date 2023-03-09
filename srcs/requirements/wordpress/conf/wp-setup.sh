@@ -39,15 +39,6 @@ wp theme install twentyseventeen --activate --allow-root
 rm /var/www/wp-config-sample.php
 rm /var/www/wp-config-create.sh
 
-wp plugin install redis-cache --activate --allow-root
-wp plugin update --all --allow-root
-
-# Ensure that WordPress permissions are correct
-# find /var/www -type d -exec chmod g+s {};
 chmod g+w -R /var/www/wp-content
-# chmod -R g+w /var/www/wp-content/themes
-# chmod -R g+w /var/www/wp-content/plugins
-
-# wp redis enable --allow-root
 
 exec "$@";
