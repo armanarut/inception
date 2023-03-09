@@ -22,8 +22,7 @@ clean: down
 	@docker system prune -a
 
 fclean:
-	@printf "Total cdocker ps
-	lean of all configurations docker\n"
+	@printf "Total clean of all configurations docker\n"
 	@docker stop $$(docker ps -qa)
 	@docker system prune --all --force --volumes
 	@docker network prune --force
