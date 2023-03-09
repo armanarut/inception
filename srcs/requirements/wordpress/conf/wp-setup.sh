@@ -20,7 +20,7 @@ wp config set 'FORCE_SSL_ADMIN' 'true'
 
 # Install WordPress
 wp core install \
-  --url="localhost" \
+  --url="127.0.0.1" \
   --title="${WP_TITLE}" \
   --admin_user="${WP_ADMIN_NAME}" \
   --admin_password="${WP_ADMIN_PASSWORD}" \
