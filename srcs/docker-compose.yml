@@ -6,17 +6,16 @@ services:
       context: .
       dockerfile: requirements/nginx/Dockerfile
     container_name: nginx
+    depends_on:
+      - wordpress
     ports:
-      - "80:80"
       - "443:443"
+    networks:
+      - inception
     volumes:
       - ./requirements/nginx/conf/:/etc/nginx/http.d/
       - ./requirements/nginx/tools:/etc/nginx/ssl/
-      - ~/Desktop/inception/website:/var/www/
-    depends_on:
-      - wordpress
-    networks:
-      - inception
+      - wp-volume:/var/www/
     restart: always
 
   mariadb:
@@ -91,12 +90,12 @@ services:
      - inception
     restart: always
 
-# volumes:
-#   wp-volume:
-#     driver_opts:
-#       o: bind
-#       type: none
-#       device: /home/${USER}/data/wordpress
+volumes:
+  wp-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/data/wordpress
 
   db-volume:
     driver_opts:
