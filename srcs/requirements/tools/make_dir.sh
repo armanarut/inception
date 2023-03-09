@@ -4,3 +4,5 @@ if [ ! -d "/home/${USER}/data" ]; then
         mkdir ~/data/mariadb
         mkdir ~/data/wordpress
 fi
+
+exec "$@";
