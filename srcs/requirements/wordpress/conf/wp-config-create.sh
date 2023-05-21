@@ -8,20 +8,11 @@ define( 'DB_PASSWORD', '${DB_PASS}' );
 define( 'DB_HOST', 'mariadb' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
-define( 'AUTH_KEY',         'str_key' );
-define( 'SECURE_AUTH_KEY',  'str_key' );
-define( 'LOGGED_IN_KEY',    'str_key' );
-define( 'NONCE_KEY',        'str_key' );
-define( 'AUTH_SALT',        'str_key' );
-define( 'SECURE_AUTH_SALT', 'str_key' );
-define( 'LOGGED_IN_SALT',   'str_key' );
-define( 'NONCE_SALT',       'str_key' );
 define('FS_METHOD','direct');
 \$table_prefix = 'wp_';
 define( 'WP_DEBUG', false );
 if ( ! defined( 'ABSPATH' ) ) {
 define( 'ABSPATH', __DIR__ . '/' );}
-define( 'WPLANG', 'ru_RU' );
 define( 'WP_REDIS_HOST', 'redis' );
 define( 'WP_REDIS_PORT', 6379 );
 define( 'WP_REDIS_TIMEOUT', 1 );
